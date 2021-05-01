@@ -25,7 +25,7 @@ public class Member extends Model
     this.lastname = lastname;
     this.email = email;
     this.password = password;
-    
+
   }
 
   public static Member findByEmail(String email)
