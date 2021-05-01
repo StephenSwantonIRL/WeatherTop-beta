@@ -15,7 +15,7 @@ public class Reading extends Model {
     public float windDirection ;
     public int pressure ;
     public String timestamp ;
-    
+
     public Reading(int code, float temperature, float windSpeed, float windDirection, int pressure)
     {
         this.code = code;

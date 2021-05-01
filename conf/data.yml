@@ -33,7 +33,21 @@ Reading(r4):
   pressure: 999
   timestamp: 2021-05-01 15:36:37
 
+Station(s1):
+  name: Tramore
+  latitude: 52.160
+  longitude: -7.152
+  readings:
+    - r1
+    - r2
 
+Station(s2):
+  name: Dunmore
+  latitude: 52.149
+  longitude: -6.994
+  readings:
+    - r3
+    - r4
 
 
 
