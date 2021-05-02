@@ -14,16 +14,17 @@ public class StationCtrl extends Controller
     render("station.html", station);
   }
 
-/*  public static void deletesong (Long id, Long songid)
+  public static void deletereading(Long id, Long readingid)
   {
-    Playlist playlist = Playlist.findById(id);
-    Song song = Song.findById(songid);
-    Logger.info ("Removing" + song.title);
-    playlist.songs.remove(song);
-    playlist.save();
-    song.delete();
-    render("playlist.html", playlist);
-  }*/
+    Station station = Station.findById(id);
+    Reading reading = Reading.findById(readingid);
+    Logger.info ("Removing Reading No. " + readingid );
+    station.readings.remove(reading);
+    station.save();
+    reading.delete();
+    render("station.html", station);
+  }
+
   public static void addReading(Long id, int code, float temperature, float windSpeed, float windDirection, int pressure)
   {
     Reading reading = new Reading(code, temperature, windSpeed, windDirection, pressure);

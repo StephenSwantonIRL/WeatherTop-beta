@@ -20,7 +20,7 @@ POST    /dashboard/addstation                   Dashboard.addStation
 GET     /station/{id}                           StationCtrl.index
 
 POST    /station/{id}/addreading                StationCtrl.addReading
-
+GET     /station/{id}/deletereading/{readingid} StationCtrl.deleteReading
 
 # Ignore favicon requests
 GET     /favicon.ico                            404
