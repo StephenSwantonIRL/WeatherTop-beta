@@ -1,18 +1,36 @@
 package controllers;
 
+import models.Member;
 import models.Station;
 import models.Reading;
 import play.Logger;
 import play.mvc.Controller;
 
+import java.util.Collection;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class StationCtrl extends Controller
 {
   public static void index(Long id)
   {
+    Member member = Accounts.getLoggedInMember();
     Station station = Station.findById(id);
-    Logger.info ("Station id = " + id);
-    render("station.html", station);
-  }
+    List<Station> stations = member.stations;
+    List<Long> stationIDs = new ArrayList<Long>();
+    for (int i =0; i<member.stations.size(); i++) {
+        stationIDs.add(member.stations.get(i).id);
+    }
+
+    if (stationIDs.contains(id)) {
+      Logger.info("Station id = " + id);
+      render("station.html", station);
+    } else {
+      Accounts.login();
+    }
+    }
+
 
   public static void deletereading(Long id, Long readingid)
   {

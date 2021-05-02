@@ -4,7 +4,7 @@ Reading(r1):
   windSpeed: 3.5
   windDirection: 220
   pressure: 1001
-  timestamp: 2021-05-01 15:36:37
+  timestamp: "2021-05-01 15:36:37"
 
 
 Reading(r2):
@@ -13,7 +13,7 @@ Reading(r2):
   windSpeed: 2
   windDirection: 200
   pressure: 1004
-  timestamp: 2021-05-01 15:36:37
+  timestamp: "2021-05-01 15:36:37"
 
 
 Reading(r3):
@@ -22,7 +22,7 @@ Reading(r3):
   windSpeed: 1
   windDirection: 90
   pressure: 1000
-  timestamp: 2021-05-01 15:36:37
+  timestamp: "2021-05-01 15:36:37"
 
 
 Reading(r4):
@@ -31,7 +31,7 @@ Reading(r4):
   windSpeed: 3.5
   windDirection: 120
   pressure: 999
-  timestamp: 2021-05-01 15:36:37
+  timestamp: "2021-05-01 15:36:37"
 
 Station(s1):
   name: Tramore
