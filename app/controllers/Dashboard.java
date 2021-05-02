@@ -1,5 +1,6 @@
 package controllers;
 
+import models.Reading;
 import play.Logger;
 import play.mvc.Controller;
 
@@ -16,4 +17,16 @@ public class Dashboard extends Controller
     List<Station> stations = member.stations;
     render ("dashboard.html", stations);
   }
+  public static void addStation (String name, float latitude, float longitude)
+  {
+    Logger.info("Adding a Station");
+    Member member = Accounts.getLoggedInMember();
+    List<Reading> readings = new ArrayList<Reading>();
+    Station station = new Station(name,latitude,longitude, readings);
+    member.stations.add(station);
+    member.save();
+    redirect ("/dashboard");
+  }
+
+
 }
