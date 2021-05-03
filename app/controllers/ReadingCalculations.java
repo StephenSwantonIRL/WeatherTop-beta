@@ -1,6 +1,6 @@
 package controllers;
 
-import models.Member;
+import models.Station;
 import play.Logger;
 import play.mvc.Controller;
 import java.util.HashMap;
@@ -166,4 +166,20 @@ public class ReadingCalculations extends Controller
     return windDirectionLabel;
   }
 
+  public static String isTrend(double reading1, double reading2, double reading3){
+    String trend = "";
+    if (reading1 > reading2 && reading2 > reading3) {
+      trend = "Rising";
+    } else if ( reading3> reading2 && reading2 > reading1) {
+      trend = "Falling";
+    } else {
+      trend = "Steady";
+    }
+    return trend;
+  }
+
+  public static int findIDofMostRecent(Station station){
+    int mostRecentReadingId = 0;
+    return mostRecentReadingId;
+  }
 }
