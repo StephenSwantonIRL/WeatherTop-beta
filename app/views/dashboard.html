@@ -9,7 +9,9 @@
     <h2 class="ui header">
       ${station.name}
     </h2>
-    #{lateststationreading reading:station.readings.get(station.readings.size()-1) /}
+    #{if station.readings.size() > 0}
+    #{lateststationreading station:station, reading:station.readings.get(station.readings.size()-1) /}
+    #{/if}
     <a href="/station/${station.id}" class="ui icon button">
       <i class="icon folder open"></i>
     </a>

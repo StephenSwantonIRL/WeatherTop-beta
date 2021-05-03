@@ -2,6 +2,7 @@ package models;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.HashMap;
 
 import javax.persistence.Entity;
 
@@ -123,4 +124,62 @@ public class Reading extends Model {
         }
         return weatherLabel;
     }
+
+    public static HashMap<Integer,String> convertToBeaufort(float windSpeed){
+        int beaufort = 0;
+        String beaufortLabel ="";
+
+        if (windSpeed<1){
+            beaufort =0;
+            beaufortLabel = "Calm";}
+
+        if (windSpeed>=1 && windSpeed <=5){
+            beaufort =1;
+            beaufortLabel = "Light Air";}
+
+        if (windSpeed>=6 && windSpeed <=11){
+            beaufort =2;
+            beaufortLabel = "Light Breeze";}
+
+        if (windSpeed>=12 && windSpeed <=19){
+            beaufort =3;
+            beaufortLabel = "Gentle Breeze";}
+
+        if (windSpeed>=20 && windSpeed <=28){
+            beaufort =4;
+            beaufortLabel = "Moderate Breeze";}
+
+        if (windSpeed>=29 && windSpeed <=38){
+            beaufort =5;
+            beaufortLabel = "Fresh Breeze";}
+
+        if (windSpeed>=39 && windSpeed <=49){
+            beaufort =6;
+            beaufortLabel = "Strong Breeze";}
+
+        if (windSpeed>=50 && windSpeed <=61){
+            beaufort =7;
+            beaufortLabel = "Near Gale";}
+
+        if (windSpeed>=62 && windSpeed <=74){
+            beaufort =8;
+            beaufortLabel = "Gale";}
+
+        if (windSpeed>=75 && windSpeed <=88){
+            beaufort =9;
+            beaufortLabel = "Severe Gale";}
+
+        if (windSpeed>=89 && windSpeed <=102){
+            beaufort =10;
+            beaufortLabel = "Strong Storm";}
+
+        if (windSpeed>=103 && windSpeed <=117){
+            beaufort =11;
+            beaufortLabel = "Violent Storm";
+        }
+        HashMap<Integer, String> beaufortValues = new HashMap<Integer, String>();
+        beaufortValues.put(beaufort, beaufortLabel);
+        return beaufortValues;
+    }
+
 }

@@ -4,8 +4,8 @@
       <div class="header">Station Name <i class="map marker alternate big icon"></i></div>
     </div>
     <div class="content">
-      <p>Lat: </p>
-      <p>Long: </p>
+      <p>Lat: ${_station.latitude} </p>
+      <p>Long: ${_station.longitude} </p>
     </div>
   </div>
   <div class="card">
@@ -32,7 +32,7 @@
       <div class="header">Wind <i class="wind big icon"></i></div>
     </div>
     <div class="content">
-      <p>N bft</p>
+      <p>${_reading.convertToBeaufort(_reading.windSpeed).keySet().toArray()[0]} bft</p>
       <p>${_reading.windDirectionLabel(_reading.windDirection)}</p>
       <p>Feels like: N.N C</p>
       <p>Max: N.N kmph </P>
