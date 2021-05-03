@@ -1,33 +1,53 @@
-<table class="ui fixed table">
-  <thead>
-    <tr>
-      <th>Weather Code</th>
-      <th>Temperature</th>
-      <th>Wind Speed</th>
-      <th>Wind Direction</th>
-      <th>Pressure</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
+<div class="ui five stackable cards">
+  <div class="card">
+    <div class="content">
+      <div class="header">Station Name <i class="map marker alternate big icon"></i></div>
+    </div>
+    <div class="content">
+      <p>Lat: </p>
+      <p>Long: </p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="content">
+      <div class="header">Weather</div>
+    </div>
+    <div class="content">
+      <p>${_reading.weatherLabel(_reading.code)}</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="content">
+      <div class="header">Temp <i class="thermometer big icon"></i></div>
+    </div>
+    <div class="content">
+      <p>${_reading.temperature} C</p>
+      <p>${_reading.toFahrenheit(_reading.temperature)} F</p>
+      <p>Max: N.N C</p>
+      <p>Min: N.N C</p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="content">
+      <div class="header">Wind <i class="wind big icon"></i></div>
+    </div>
+    <div class="content">
+      <p>N bft</p>
+      <p>${_reading.windDirectionLabel(_reading.windDirection)}</p>
+      <p>Feels like: N.N C</p>
+      <p>Max: N.N kmph </P>
+      <p>Min: N.N kmph </P>
 
-      <tr>
-        <td>
-          ${_reading.code}
-        </td>
-        <td>
-          ${_reading.temperature}
-        </td>
-        <td>
-          ${_reading.windSpeed}
-        </td>
-        <td>
-          ${_reading.windDirection}
-        </td>
-        <td>
-          ${_reading.pressure}
-        </td>
-      </tr>
-
-  </tbody>
-</table>
+    </div>
+  </div>
+  <div class="card">
+    <div class="content">
+      <div class="header">Pressure <i class="compress arrows alternate big icon"></i></div>
+    </div>
+    <div class="content">
+      <p>${_reading.pressure} hPa</p>
+      <p>Max: N hpa </P>
+      <p>Min: N hpa </P>
+    </div>
+  </div>
+</div>
