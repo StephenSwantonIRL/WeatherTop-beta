@@ -11,6 +11,8 @@ GET    /login                                   Accounts.login
 POST   /register                                Accounts.register
 POST   /authenticate                            Accounts.authenticate
 GET    /logout                                  Accounts.logout
+GET    /editprofile                             Accounts.editProfile
+POST   /updateprofile                           Accounts.updateProfile
 
 
 GET     /dashboard                              Dashboard.index

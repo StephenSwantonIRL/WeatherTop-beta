@@ -11,6 +11,25 @@ public class Accounts extends Controller
     render("signup.html");
   }
 
+  public static void editProfile()
+  {
+    Member member = getLoggedInMember();
+    String notify = "Edit your details using this form.";
+    render("editprofile.html", member, notify);
+  }
+
+  public static void updateProfile(String firstname, String lastname, String email, String password)
+  {
+    Member member = getLoggedInMember();
+    member.firstname = firstname;
+    member.lastname = lastname;
+    member.email = email;
+    member.password = password;
+    member.save();
+    String notify = "Your updated details have been saved!";
+    render("editprofile.html", member, notify);
+  }
+
   public static void login()
   {
     render("login.html");
