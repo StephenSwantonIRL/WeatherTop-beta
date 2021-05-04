@@ -7,6 +7,9 @@
   <h2 class="ui header">
     ${station.name}
   </h2>
+  #{if station.readings.size() > 0}
+  #{lateststationreading station:station, reading:station.readings.get(station.readings.size()-1) /}
+  #{/if}
   #{listreadings station:station /}
   #{addreading station:station /}
 </section>

@@ -23,8 +23,8 @@
     <div class="content">
       <p>${_reading.temperature} C</p>
       <p>${_reading.toFahrenheit(_reading.temperature)} F</p>
-      <p>Max: N.N C</p>
-      <p>Min: N.N C</p>
+      <p>Max: ${_station.readingMaxMin("max","temp")} C</p>
+      <p>Min: ${_station.readingMaxMin("min","temp")} C</p>
     </div>
   </div>
   <div class="card">
@@ -36,8 +36,8 @@
       <p>${_reading.convertToBeaufort(_reading.windSpeed).values().toArray()[0]}</p>
       <p>${_reading.windDirectionLabel(_reading.windDirection)}</p>
       <p>Feels like: ${_reading.calculateWindChill(_reading.temperature, _reading.windSpeed)}</p>
-      <p>Max: N.N kmph </P>
-      <p>Min: N.N kmph </P>
+      <p>Max: ${_station.readingMaxMin("max","wind")} Km/h </P>
+      <p>Min: ${_station.readingMaxMin("min","wind")} Km/h </P>
 
     </div>
   </div>
@@ -47,8 +47,8 @@
     </div>
     <div class="content">
       <p>${_reading.pressure} hPa</p>
-      <p>Max: N hpa </P>
-      <p>Min: N hpa </P>
+      <p>Max: ${_station.readingMaxMin("max","pressure")} hPa </P>
+      <p>Min: ${_station.readingMaxMin("min","pressure")} hPa </P>
     </div>
   </div>
 </div>
