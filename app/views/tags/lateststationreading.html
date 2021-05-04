@@ -10,7 +10,7 @@
   </div>
   <div class="card">
     <div class="content">
-      <div class="header">Weather</div>
+      <div class="header">Weather <i class="${_reading.currentIcon(_reading.code)}"></i></div>
     </div>
     <div class="content">
       <p>${_reading.weatherLabel(_reading.code)}</p>
@@ -33,8 +33,9 @@
     </div>
     <div class="content">
       <p>${_reading.convertToBeaufort(_reading.windSpeed).keySet().toArray()[0]} bft</p>
+      <p>${_reading.convertToBeaufort(_reading.windSpeed).values().toArray()[0]}</p>
       <p>${_reading.windDirectionLabel(_reading.windDirection)}</p>
-      <p>Feels like: N.N C</p>
+      <p>Feels like: ${_reading.calculateWindChill(_reading.temperature, _reading.windSpeed)}</p>
       <p>Max: N.N kmph </P>
       <p>Min: N.N kmph </P>
 

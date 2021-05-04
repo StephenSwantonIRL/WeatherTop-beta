@@ -124,7 +124,11 @@ public class Reading extends Model {
         }
         return weatherLabel;
     }
-
+    public static double calculateWindChill( double temperature, double windSpeed){
+        double windChill = 13.12 + 0.6215*temperature - 11.37 *(Math.pow((float)windSpeed,0.16)) + 0.3965*temperature*(Math.pow((float)windSpeed,0.16));
+        double windChillR = (int)(windChill*100);
+        return windChillR/100;
+    }
     public static HashMap<Integer,String> convertToBeaufort(float windSpeed){
         int beaufort = 0;
         String beaufortLabel ="";
@@ -181,5 +185,37 @@ public class Reading extends Model {
         beaufortValues.put(beaufort, beaufortLabel);
         return beaufortValues;
     }
+    public static String currentIcon(int code) {
 
+        String icon ="";
+        switch (code) {
+            case (100):
+                icon = "sun big icon";
+                break;
+            case (200):
+                icon = "cloud sun big icon";
+                break;
+            case (300):
+                icon = "cloud icon";
+                break;
+            case (400):
+                icon = "cloud sun rain big icon";
+                break;
+            case (500):
+                icon = "cloud showers heavy big icon";
+                break;
+            case (600):
+                icon = "umbrella big icon";
+                break;
+            case (700):
+                icon = "snowflake big icon";
+                break;
+            case (800):
+                icon = "bolt big icon";
+                break;
+            default:
+                icon = "";
+        }
+        return icon;
+    }
 }

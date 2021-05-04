@@ -29,7 +29,7 @@ public class Dashboard extends Controller
   }
   public static void deleteStation (Long id)
   {
-    Logger.info("Deleting a Playlist");
+    Logger.info("Deleting a Station");
     Member member = Accounts.getLoggedInMember();
     Station station = Station.findById(id);
     member.stations.remove(station);
