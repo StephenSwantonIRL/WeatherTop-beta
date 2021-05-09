@@ -25,7 +25,9 @@
       <p>${_reading.toFahrenheit(_reading.temperature)} F</p>
       <p>Max: ${_station.readingMaxMin("max","temp")} C</p>
       <p>Min: ${_station.readingMaxMin("min","temp")} C</p>
+      #{if _station.readings.size()>2}
       <p>Trend: ${_station.outputTrend("temp")}</p>
+      #{/if}
     </div>
   </div>
   <div class="card">
@@ -39,8 +41,9 @@
       <p>Feels like: ${_reading.calculateWindChill(_reading.temperature, _reading.windSpeed)}</p>
       <p>Max: ${_station.readingMaxMin("max","wind")} Km/h </P>
       <p>Min: ${_station.readingMaxMin("min","wind")} Km/h </P>
+      #{if _station.readings.size()>2}
       <p>Trend: ${_station.outputTrend("wind")}</p>
-
+      #{/if}
     </div>
   </div>
   <div class="card">
@@ -51,7 +54,9 @@
       <p>${_reading.pressure} hPa</p>
       <p>Max: ${_station.readingMaxMin("max","pressure")} hPa </P>
       <p>Min: ${_station.readingMaxMin("min","pressure")} hPa </P>
+      #{if _station.readings.size()>2}
       <p>Trend: ${_station.outputTrend("pressure")}</p>
+      #{/if}
     </div>
   </div>
 </div>
