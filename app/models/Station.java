@@ -158,7 +158,16 @@ public class Station extends Model {
         }
         return trend;
     }
-
+    public String trendIcon(String type){
+        String trendIcon = "";
+        if (type == "Falling") {
+            trendIcon = "down";
+        }
+        if (type == "Rising") {
+            trendIcon = "up";
+        }
+        return trendIcon;
+    }
     }
 
 

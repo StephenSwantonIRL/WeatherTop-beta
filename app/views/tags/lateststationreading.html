@@ -26,7 +26,7 @@
       <p>Max: ${_station.readingMaxMin("max","temp")} C</p>
       <p>Min: ${_station.readingMaxMin("min","temp")} C</p>
       #{if _station.readings.size()>2}
-      <p>Trend: ${_station.outputTrend("temp")}</p>
+      <p>Trend: ${_station.outputTrend("temp")} <i class="arrow ${_station.trendIcon(_station.outputTrend("temp"))} icon"></i></p>
       #{/if}
     </div>
   </div>
@@ -42,7 +42,7 @@
       <p>Max: ${_station.readingMaxMin("max","wind")} Km/h </P>
       <p>Min: ${_station.readingMaxMin("min","wind")} Km/h </P>
       #{if _station.readings.size()>2}
-      <p>Trend: ${_station.outputTrend("wind")}</p>
+      <p>Trend: ${_station.outputTrend("wind")}<i class="arrow ${_station.trendIcon(_station.outputTrend("wind"))} icon"></i></p>
       #{/if}
     </div>
   </div>
@@ -55,7 +55,7 @@
       <p>Max: ${_station.readingMaxMin("max","pressure")} hPa </P>
       <p>Min: ${_station.readingMaxMin("min","pressure")} hPa </P>
       #{if _station.readings.size()>2}
-      <p>Trend: ${_station.outputTrend("pressure")}</p>
+      <p>Trend: ${_station.outputTrend("pressure")} <i class="arrow ${_station.trendIcon(_station.outputTrend("pressure"))} icon"></i></p>
       #{/if}
     </div>
   </div>
