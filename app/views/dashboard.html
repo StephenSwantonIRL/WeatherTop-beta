@@ -10,7 +10,7 @@
       ${station.name}
     </h2>
     #{if station.readings.size() > 0}
-    #{lateststationreading station:station, reading:station.readings.get(station.readings.size()-1) /}
+    #{lateststationreading station:station, reading:station.findReadingById(station.getLatestThreeReadings().get(1)) /}
     #{/if}
     <a href="/station/${station.id}" class="ui icon button">
       <i class="icon folder open"></i>

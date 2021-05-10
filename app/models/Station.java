@@ -73,7 +73,18 @@ public class Station extends Model {
         LocalDateTime[] sortedTimes = new LocalDateTime[3];
         Long[] sortedDbID = new Long[3];
 
-        if (readings.size() < 3) {
+        if (readings.size() == 1) {
+            latestThree.put(1,readings.get(0).id);
+            return latestThree;
+        }
+        if (readings.size() == 2) {
+            if(LocalDateTime.parse(readings.get(0).timestamp, dateFormatPattern).isAfter(LocalDateTime.parse(readings.get(1).timestamp, dateFormatPattern))) {
+                latestThree.put(1, readings.get(0).id);
+                latestThree.put(2, readings.get(1).id);
+            } else {
+                latestThree.put(1, readings.get(1).id);
+                latestThree.put(2, readings.get(0).id);
+            }
             return latestThree;
         }
         for (Reading reading : readings) {
@@ -168,6 +179,12 @@ public class Station extends Model {
         }
         return trendIcon;
     }
+
+    public Reading findReadingById(Long id) {
+
+        Reading reading = Reading.findById(id);
+        return reading;
     }
 
+    }
 
