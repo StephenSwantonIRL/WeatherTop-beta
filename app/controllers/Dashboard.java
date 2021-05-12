@@ -14,7 +14,11 @@ public class Dashboard extends Controller
   public static void index() {
     Logger.info("Rendering Dashboard");
     Member member = Accounts.getLoggedInMember();
-    List<Station> stations = member.stations;
+    List<Station> stations1 = member.stations;
+    List<Station> alphabeticalStations = member.renderAlphabetically(stations1);
+    List<Station>stations = alphabeticalStations;
+
+    Logger.info("station array = " + stations);
     render ("dashboard.html", stations);
   }
   public static void addStation (String name, float latitude, float longitude)

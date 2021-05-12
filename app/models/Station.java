@@ -1,9 +1,6 @@
 package models;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Collections;
+import java.util.*;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -184,6 +181,10 @@ public class Station extends Model {
 
         Reading reading = Reading.findById(id);
         return reading;
+    }
+
+    public String getName(){
+        return this.name;
     }
 
     }

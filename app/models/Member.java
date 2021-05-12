@@ -6,6 +6,8 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 @Entity
@@ -37,4 +39,10 @@ public class Member extends Model
   {
     return this.password.equals(password);
   }
+
+  public List<Station> renderAlphabetically(List<Station> memberStations) {
+    Collections.sort(memberStations, Comparator.comparing(Station::getName, String.CASE_INSENSITIVE_ORDER));
+    return memberStations;
+  }
 }
+
