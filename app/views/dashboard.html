@@ -12,12 +12,14 @@
     #{if station.readings.size() > 0}
     #{lateststationreading station:station, reading:station.findReadingById(station.getLatestThreeReadings().get(1)) /}
     #{/if}
-    <a href="/station/${station.id}" class="ui icon button">
-      <i class="icon folder open"></i>
-    </a>
-    <a href="/dashboard/deletestation/${station.id}" class="ui icon button">
-      <i class="icon trash"></i>
-    </a>
+    <div id="stationactions">
+      <a href="/station/${station.id}" class="ui icon button">
+        <i class="icon folder open"></i>
+      </a>
+      <a href="/dashboard/deletestation/${station.id}" class="ui icon button">
+        <i class="icon trash"></i>
+      </a>
+    </div>
   </section>
   #{/list}
 </section>

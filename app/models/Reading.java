@@ -27,16 +27,12 @@ public class Reading extends Model {
         LocalDateTime timeNow = LocalDateTime.now();
         DateTimeFormatter dateFormatPattern = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         this.timestamp = timeNow.format(dateFormatPattern);
-
-
-
     }
     public static double toFahrenheit(double degreesCelsius){
         double degreesFahrenheit = (degreesCelsius * 9/5)+32;
         return degreesFahrenheit;
     }
     public static String windDirectionLabel(double windDirection){
-
         String windDirectionLabel ="";
         if ((windDirection>360 )|| (windDirection<0)){
             windDirectionLabel ="error - Invalid wind direction value";

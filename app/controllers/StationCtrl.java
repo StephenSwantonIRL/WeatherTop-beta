@@ -19,8 +19,6 @@ public class StationCtrl extends Controller
     for (int i =0; i<member.stations.size(); i++) {
         stationIDs.add(member.stations.get(i).id);
     }
-
-
     if (stationIDs.contains(id)) {
         Logger.info("Station id = " + id);
         render("station.html", station);
@@ -43,6 +41,8 @@ public class StationCtrl extends Controller
 
   public static void addReading(Long id, int code, float temperature, float windSpeed, float windDirection, int pressure)
   {
+
+
     Reading reading = new Reading(code, temperature, windSpeed, windDirection, pressure);
     Station station = Station.findById(id);
     station.readings.add(reading);
