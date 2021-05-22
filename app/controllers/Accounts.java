@@ -54,7 +54,8 @@ public class Accounts extends Controller
       redirect ("/dashboard");
     } else {
       Logger.info("Authentication failed");
-      redirect("/login");
+      String notify = "Your details are incorrect. Please try again.";
+      render("login.html", notify);
     }
   }
 
