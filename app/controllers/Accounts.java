@@ -40,7 +40,7 @@ public class Accounts extends Controller
     Logger.info("Registering new user " + email);
     Member member = new Member(firstname, lastname, email, password);
     member.save();
-    redirect("/");
+    redirect("/dashboard");
   }
 
   public static void authenticate(String email, String password)

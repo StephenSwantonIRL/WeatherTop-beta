@@ -28,11 +28,11 @@ public class Reading extends Model {
         DateTimeFormatter dateFormatPattern = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         this.timestamp = timeNow.format(dateFormatPattern);
     }
-    public static double toFahrenheit(double degreesCelsius){
-        double degreesFahrenheit = (degreesCelsius * 9/5)+32;
+    public static float toFahrenheit(float degreesCelsius){
+        float degreesFahrenheit = (degreesCelsius * 9/5)+32;
         return degreesFahrenheit;
     }
-    public static String windDirectionLabel(double windDirection){
+    public static String windDirectionLabel(float windDirection){
         String windDirectionLabel ="";
         if ((windDirection>360 )|| (windDirection<0)){
             windDirectionLabel ="error - Invalid wind direction value";
@@ -120,8 +120,8 @@ public class Reading extends Model {
         }
         return weatherLabel;
     }
-    public static double calculateWindChill( double temperature, double windSpeed){
-        double windChill = 13.12 + 0.6215*temperature - 11.37 *(Math.pow((float)windSpeed,0.16)) + 0.3965*temperature*(Math.pow((float)windSpeed,0.16));
+    public static double calculateWindChill( float temperature, float windSpeed){
+        double windChill = 13.12 + 0.6215*temperature - 11.37 *(Math.pow(windSpeed,0.16)) + 0.3965*temperature*(Math.pow(windSpeed,0.16));
         double windChillR = (int)(windChill*100);
         return windChillR/100;
     }

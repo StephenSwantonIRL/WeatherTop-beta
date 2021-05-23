@@ -40,7 +40,7 @@
       <p>${_reading.convertToBeaufort(_reading.windSpeed).keySet().toArray()[0]} bft</p>
       <p>${_reading.convertToBeaufort(_reading.windSpeed).values().toArray()[0]}</p>
       <p>${_reading.windDirectionLabel(_reading.windDirection)}</p>
-      <p>Feels like: ${_reading.calculateWindChill(_reading.temperature, _reading.windSpeed)}</p>
+      <p>Feels like: ${_reading.calculateWindChill(_reading.temperature, _reading.windSpeed)} C</p>
       <p>Max: ${_station.readingMaxMin("max","wind")} Km/h </P>
       <p>Min: ${_station.readingMaxMin("min","wind")} Km/h </P>
       #{if _station.readings.size()>2}

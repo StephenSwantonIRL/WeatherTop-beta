@@ -52,10 +52,10 @@ public class Station extends Model {
         }
         String value = "";
         if (property.equals("temp")) {
-            value = String.format("%.2f", valueTemp);
+            value = String.format("%.1f", valueTemp);
         }
         if (property.equals("wind")) {
-            value = String.format("%.2f", valueWindSpeed);
+            value = String.format("%.1f", valueWindSpeed);
         }
         if (property.equals("pressure")) {
             value = Integer.toString(valuePressure);

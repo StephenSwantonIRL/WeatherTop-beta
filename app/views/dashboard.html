@@ -4,6 +4,9 @@
 #{menu id:"dashboard"/}
 
 <section class="ui segment">
+  #{if stations.size() == 0}
+  <h3> No Stations yet. Create one below</h3>
+  #{/if}
   #{list items:stations, as:'station'}
   <section class="ui segment">
     <h2 class="ui header">
@@ -12,6 +15,7 @@
     #{if station.readings.size() > 0}
     #{lateststationreading station:station, reading:station.findReadingById(station.getLatestThreeReadings().get(1)) /}
     #{/if}
+
     <div id="stationactions">
       <a href="/station/${station.id}" class="ui icon button">
         <i class="icon folder open"></i>
